@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\BackOfficeController;
+use App\Http\Controllers\RoleController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +20,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('articles', ArticleController::class);
+Route::resource('backend', BackOfficeController::class);
+Route::resource('roles', RoleController::class);
 
 Auth::routes();
 
